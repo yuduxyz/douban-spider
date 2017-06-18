@@ -1,0 +1,11 @@
+{
+  "name": "doubanSpider",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yuduxyz/douban-spider.git",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1"
+  }
+}
