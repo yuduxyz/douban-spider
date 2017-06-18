@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="houses"></div>
+
+    <script>
+        window.onload = function() {
+            const houses = document.getElementById('houses');
+            fetch('http://localhost:8080', {
+                mode: 'cors'
+            }, res => {
+                if (res.ok) return res;
+            }).then(res => {
+                return res.json();
+            }).then(data => {
+                data.forEach(d => {
+                    let p = document.createElement('p');
+                    let a = document.createElement('a');
+                    a.href = d.link;
+                    a.innerHTML = d.title;
+                    p.appendChild(a);
+                    houses.appendChild(p);
+                })
+            }) 
+        }
+    </script>
+</body>
+</html>
